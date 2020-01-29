@@ -6,6 +6,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import Axios from '../../request/request'
   export default {
     data () {
       return {
@@ -22,11 +23,17 @@ import { mapState, mapMutations } from 'vuex'
 
     },
     methods: {
-      ...mapMutations(['setUserid'])
+      ...mapMutations(['setUserid']),
+      async getUrl() {
+        let getresult =  await Axios('/api/meta/getsubareas?areaid=33&isarea=0', {lala: 123}, '', 'true', 'true');
+        console.log(getresult)
+      },
 
     },
     created () {
-      this.setUserid('888')
+      this.setUserid('888');
+      this.getUrl();
+      
     },
     mounted () {
 
