@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# vuedemo
-vuedemo
-=======
+
 **安装：**
     npm install or yarn
     
@@ -35,4 +32,3 @@ vuex：状态管理
     
 **运行方式**
 yourHostName + ':' + yourPort + '/index.html'
->>>>>>> 42ce90d98bb57f30699e82094490d430df7a2c6e

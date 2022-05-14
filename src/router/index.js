@@ -1,25 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from 'pages/login';
+import Index from 'pages/index';
 Vue.use(Router);
 let router = new Router({
   routes: [
     {
-      path: '/login',
-      name: 'login',
-      component: Login,
+      path: '/index',
+      name: 'index',
+      component: Index,
       meta: {
-        keepAlive: false
+        keepAlive: true
       }
     }
   ]
 })
-
 router.beforeEach((to, from, next) => {
   if(to.path === '/') {
-    next({ path: '/login' });
+    next({ path: '/index' });
     return false;
   }
   next();
 })
+
 export default router

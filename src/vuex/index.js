@@ -7,9 +7,7 @@ const state = {
 };
 
 const mutations = {
-    setUserid(state, userid){
-        state.userid = userid;
-    }
+    
 }
 
 let store = new Vuex.Store({
