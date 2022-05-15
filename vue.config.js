@@ -5,12 +5,13 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 module.exports = {
+  publicPath: './',
   devServer: {
-    port: 8080,
+    port: 7600,
       open: true,//项目启动时是否自动打开浏览器，我这里设置为false,不打开，true表示打开
       proxy: {
         '/': {//代理api
-            target: "http://cs.lejiaolexue.cn/",//服务器api地址
+            target: "https://web.fulitimes.com/",//服务器api地址
             changeOrigin: true,//是否跨域
             ws: true, // proxy websockets
             pathRewrite: {//重写路径3
