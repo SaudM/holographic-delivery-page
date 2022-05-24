@@ -12,11 +12,23 @@
           @touchstart="touchstart" @touchend="touchend" />
       </div>
     </div>
-    <div class="imgBox">
+    <div class="contentBox">
       <img class="oneImg" v-for="(item, index) in 3" :key="index" :src="require(`@/assets/img${index}.jpg`)"
         draggable="false" />
+      <div class="submitFormBox" v-if="!isMobile">
+        <div class="submitOne" v-for="(item, index) in ['您的名字', '您的电话']" :key="index">
+          {{item}}<span class="submitMark">*</span><input class="submitInput" type="text" v-model="submitArr[index]" :placeholder="`请输入${item}`">
+        </div>
+      </div>
+      <div class="companyIntroduce">
+        <div class="introduceOne" v-for="(item, index) in companyArr" :key="index">
+          <span class="introduceText">{{item.title}}</span>
+          <span class="introduceCont">{{item.cont}}</span>
+        </div>
+      </div>
     </div>
-    <button class="showQrcord" @click="centerDialogVisible = true">立即咨询</button>
+
+    <button class="showQrcord" @click="clickSubmitButton">{{isMobile ? '立即咨询' : '提   交' }}</button>
 
   </div>
 </template>
@@ -27,7 +39,14 @@ export default {
     return {
       longProssTimer: null,
       centerDialogVisible: false,
-      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq.png'
+      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq.png',
+      isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
+      submitArr: [],
+      companyArr: [
+        {title: '公司：', cont: '莆田上德若谷企业管理有限公司'},
+        {title: '地址：', cont: '福建省莆田市荔城区拱辰街道东圳东路1199号中海天下1号楼1401室'},
+        {title: '电话：', cont: '0594-79976666'},
+      ]
     }
   },
   components: {
@@ -74,6 +93,18 @@ export default {
     },
     touchend() {
       clearTimeout(this.longProssTimer)
+    },
+    clickSubmitButton () {
+      if (this.isMobile) {
+        this.centerDialogVisible = true
+        return false
+      }
+      if (!this.submitArr[0] || !this.submitArr[1]) {
+        Message.error(!this.submitArr[0] ? '请输入姓名' : '请输入电话')
+        return false
+      }
+      Message.success('提交成功')
+      this.submitArr = []
     },
   },
   created() {
@@ -140,7 +171,7 @@ export default {
     }
   }
 
-  .imgBox {
+  .contentBox {
     width: 100%;
     flex: 1;
     overflow-y: auto;
@@ -150,11 +181,51 @@ export default {
       width: 100%;
       display: block;
     }
+
+    .submitFormBox {
+      width: 100%;
+      background: #fff;
+      padding: 24px;
+
+      .submitOne{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        font-size: 14px;
+        .submitMark{
+          color: #f66;
+          margin: 0 4px 0 6px;
+          height: 12px;
+        }
+        .submitInput{
+          flex: 1;
+          height: 40px;
+          color: #999;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+    .companyIntroduce{
+      width: 100%;
+      background: #eee;
+      padding: 12px 24px;
+      .introduceOne{
+        line-height: 17px;
+        font-size: 15px;
+        margin: 8px 0;
+        color: #999;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+      }
+    }
   }
+
+  
 
   .showQrcord {
     width: calc(~"100% - 80px");
-    ;
     margin: 10px auto 40px;
     height: 40px;
     display: flex;
