@@ -17,18 +17,23 @@
         draggable="false" />
       <div class="submitFormBox" v-if="!isMobile">
         <div class="submitOne" v-for="(item, index) in ['您的名字', '您的电话']" :key="index">
-          {{item}}<span class="submitMark">*</span><input class="submitInput" type="text" v-model="submitArr[index]" :placeholder="`请输入${item}`">
+          {{ item }}<span class="submitMark">*</span><input class="submitInput" type="text" v-model="submitArr[index]"
+            :placeholder="`请输入${item}`">
         </div>
+      </div>
+      <div class="yhys">
+        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息保护声明》</a>
       </div>
       <div class="companyIntroduce">
         <div class="introduceOne" v-for="(item, index) in companyArr" :key="index">
-          <span class="introduceText">{{item.title}}</span>
-          <span class="introduceCont">{{item.cont}}</span>
+          <span class="introduceText">{{ item.title }}</span>
+          <span class="introduceCont">{{ item.cont }}</span>
         </div>
       </div>
     </div>
 
-    <button class="showQrcord" @click="clickSubmitButton">{{isMobile ? '立即咨询' : '提   交' }}</button>
+
+    <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '立即咨询' : '提 交' }}</button>
 
   </div>
 </template>
@@ -43,9 +48,9 @@ export default {
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
-        {title: '公司：', cont: '莆田上德若谷企业管理有限公司'},
-        {title: '地址：', cont: '福建省莆田市荔城区拱辰街道东圳东路1199号中海天下1号楼1401室'},
-        {title: '电话：', cont: '0594-79976666'},
+        { title: '公司：', cont: '莆田上德若谷企业管理有限公司' },
+        { title: '地址：', cont: '福建省莆田市荔城区拱辰街道东圳东路1199号中海天下1号楼1401室' },
+        { title: '电话：', cont: '0594-79976666' },
       ]
     }
   },
@@ -87,14 +92,14 @@ export default {
           event: 'cq-weixin', convertId: 222, cb: function () {
             console.log('Your callback function here!')
           }
-        }); 
+        });
 
       }, 300);
     },
     touchend() {
       clearTimeout(this.longProssTimer)
     },
-    clickSubmitButton () {
+    clickSubmitButton() {
       if (this.isMobile) {
         this.centerDialogVisible = true
         return false
@@ -182,23 +187,48 @@ export default {
       display: block;
     }
 
+    .yhys {
+          padding: 24px;
+          // text-align: start; 
+      a:link {
+        font-size: 15px;
+        color: #0147be;
+        text-decoration: none;
+        text-decoration-line: none
+      }
+
+      a:visited {
+        font-size: 15px;
+        color: #0147be;
+        text-decoration: none;
+      }
+
+      a:hover {
+        font-size: 15px;
+        color: #999999;
+        text-decoration: underline;
+      }
+    }
+
     .submitFormBox {
       width: 100%;
       background: #fff;
       padding: 24px;
 
-      .submitOne{
+      .submitOne {
         display: flex;
         align-items: center;
         justify-content: center;
         color: #333;
         font-size: 14px;
-        .submitMark{
+
+        .submitMark {
           color: #f66;
           margin: 0 4px 0 6px;
           height: 12px;
         }
-        .submitInput{
+
+        .submitInput {
           flex: 1;
           height: 40px;
           color: #999;
@@ -206,11 +236,13 @@ export default {
         }
       }
     }
-    .companyIntroduce{
+
+    .companyIntroduce {
       width: 100%;
       background: #eee;
       padding: 12px 24px;
-      .introduceOne{
+
+      .introduceOne {
         line-height: 17px;
         font-size: 15px;
         margin: 8px 0;
@@ -222,7 +254,7 @@ export default {
     }
   }
 
-  
+
 
   .showQrcord {
     width: calc(~"100% - 80px");
