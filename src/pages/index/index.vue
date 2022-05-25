@@ -4,10 +4,10 @@
       <div class="dialogCase" @click.stop="() => { }">
         <img class="closeDialog" @click="centerDialogVisible = false" src="@/assets/layout_close.png"
           draggable="false" />
-        <div class="dialogTitle">咨询请添加“助理”</div>
+        <div class="dialogTitle">咨询请添加助理</div>
         <div class="dialogTitle" @mousedown="touchstart('copyText')" @mouseup="touchend"
-          @touchstart="touchstart('copyText')" @touchend="touchend">微信：quanxi-shuju</div>
-        <div class="dialogTitle">或长按识别下方二维码</div>
+          @touchstart="touchstart('copyText')" @touchend="touchend">微信号:quanxi-shuju</div>
+        <div class="dialogTitle">长按复制或截图保存</div>
         <img class="dialogQrcord" :src="qrCodeImg" draggable="false" @mousedown="touchstart" @mouseup="touchend"
           @touchstart="touchstart" @touchend="touchend" />
       </div>
