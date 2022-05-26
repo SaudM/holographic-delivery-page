@@ -21,8 +21,9 @@
             :placeholder="`请输入${item}`">
         </div>
       </div>
-      <div class="yhys">
-        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息保护声明》</a>
+      <div class="yhys">查看
+        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
+        授权范围
       </div>
       <div class="companyIntroduce">
         <div class="introduceOne" v-for="(item, index) in companyArr" :key="index">
@@ -31,8 +32,6 @@
         </div>
       </div>
     </div>
-
-
     <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '立即咨询' : '提 交' }}</button>
 
   </div>
@@ -76,7 +75,7 @@ export default {
           Message.success('复制成功')
           document.body.removeChild(inputEl)
           _ks_trace.push({
-            event: 'copy-weixin', convertId: 111, cb: function () {
+            event: 'form', convertId: 442890, cb: function () {
               console.log('Your callback function here!')
             }
           })
@@ -86,12 +85,6 @@ export default {
         window.wx.previewImage({
           current: this.qrCodeImg,
           urls: [this.qrCodeImg],
-        });
-
-        _ks_trace.push({
-          event: 'cq-weixin', convertId: 222, cb: function () {
-            console.log('Your callback function here!')
-          }
         });
 
       }, 300);
@@ -188,18 +181,21 @@ export default {
     }
 
     .yhys {
-          padding: 24px;
-          // text-align: start; 
+      padding: 24px;
+      color: #000000;
+      text-align: start;
+
       a:link {
         font-size: 15px;
-        color: #0147be;
+
+        color: #0455e2;
         text-decoration: none;
         text-decoration-line: none
       }
 
       a:visited {
         font-size: 15px;
-        color: #0147be;
+        color: #033da0;
         text-decoration: none;
       }
 
