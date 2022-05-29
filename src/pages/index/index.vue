@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="yhys">查看
-        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
+          <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
       </div>
       <div class="companyIntroduce">
