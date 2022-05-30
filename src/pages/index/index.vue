@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="yhys">查看
-          <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
+        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
       </div>
       <div class="companyIntroduce">
@@ -75,7 +75,7 @@ export default {
           Message.success('复制成功')
           document.body.removeChild(inputEl)
           _ks_trace.push({
-            event: 'form', convertId: 442890, cb: function () {
+            event: 'form', convertId: 444282, cb: function () {
               console.log('Your callback function here!')
             }
           })
