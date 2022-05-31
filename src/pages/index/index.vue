@@ -77,11 +77,11 @@ export default {
           document.execCommand('copy')
           Message.success('复制成功')
           document.body.removeChild(inputEl)
-          // _ks_trace.push({
-          //   event: 'form', convertId: 442890, cb: function () {
-          //     console.log('Your callback function here!')
-          //   }
-          // })
+          _ks_trace.push({
+            event: 'form', convertId: 442890, cb: function () {
+              console.log('Your callback function here!')
+            }
+          })
           return false
         }
 
