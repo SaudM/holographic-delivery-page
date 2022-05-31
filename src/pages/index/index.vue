@@ -4,7 +4,7 @@
       <div class="dialogCase" @click.stop="() => { }">
         <img class="closeDialog" @click="centerDialogVisible = false" src="@/assets/layout_close.png"
           draggable="false" />
-        <div class="dialogTitle">咨询请添加助理</div>
+        <div class="dialogTitle">请添加助理微信</div>
         <div class="dialogTitle" @mousedown="touchstart('copyText')" @mouseup="touchend"
           @touchstart="touchstart('copyText')" @touchend="touchend">微信号:quanxi-shuju</div>
         <div class="dialogTitle">长按复制或截图保存</div>
@@ -23,7 +23,19 @@
       </div>
 
 
+
+
+
       <div class="yhys">
+
+        <div>
+          <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted"
+            unchecked-value="not_accepted">
+            I accept the terms and use
+          </b-form-checkbox>
+          <div>State: <strong>{{ status }}</strong></div>
+        </div>
+
         同意并查看
         <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
