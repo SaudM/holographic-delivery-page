@@ -21,8 +21,11 @@
             :placeholder="`请输入${item}`">
         </div>
       </div>
-      <div class="yhys">查看
-          <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
+
+
+      <div class="yhys">
+        同意并查看
+        <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
       </div>
       <div class="companyIntroduce">
@@ -74,11 +77,11 @@ export default {
           document.execCommand('copy')
           Message.success('复制成功')
           document.body.removeChild(inputEl)
-          _ks_trace.push({
-            event: 'form', convertId: 442890, cb: function () {
-              console.log('Your callback function here!')
-            }
-          })
+          // _ks_trace.push({
+          //   event: 'form', convertId: 442890, cb: function () {
+          //     console.log('Your callback function here!')
+          //   }
+          // })
           return false
         }
 
