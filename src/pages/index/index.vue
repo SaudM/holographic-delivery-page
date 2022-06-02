@@ -78,7 +78,7 @@ export default {
           Message.success('复制成功')
           document.body.removeChild(inputEl)
           _ks_trace.push({
-            event: 'form', convertId: 442890, cb: function () {
+            event: 'form', convertId: 445832, cb: function () {
               console.log('Your callback function here!')
             }
           })
