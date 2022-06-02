@@ -4,7 +4,7 @@
       <div class="dialogCase" @click.stop="() => { }">
         <img class="closeDialog" @click="centerDialogVisible = false" src="@/assets/layout_close.png"
           draggable="false" />
-        <div class="dialogTitle">咨询请添加助理</div>
+        <div class="dialogTitle">请添加助理微信</div>
         <div class="dialogTitle" @mousedown="touchstart('copyText')" @mouseup="touchend"
           @touchstart="touchstart('copyText')" @touchend="touchend">微信号:quanxi-shuju</div>
         <div class="dialogTitle">长按复制或截图保存</div>
@@ -21,7 +21,6 @@
             :placeholder="`请输入${item}`">
         </div>
       </div>
-
 
       <div class="yhys">
         同意并查看
@@ -42,6 +41,7 @@
 <script>
 import { Message } from 'element-ui'
 export default {
+  
   data() {
     return {
       longProssTimer: null,
