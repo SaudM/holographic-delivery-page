@@ -6,8 +6,8 @@
           draggable="false" />
         <div class="dialogTitle">请添加助理微信</div>
         <div class="dialogTitle" @mousedown="touchstart('copyText')" @mouseup="touchend"
-          @touchstart="touchstart('copyText')" @touchend="touchend">微信号:quanxi-shuju</div>
-        <div class="dialogTitle">长按复制或截图保存</div>
+          @touchstart="touchstart('copyText')" @touchend="touchend">复制微信号:quanxi-shuju</div>
+        <div class="dialogTitle">扫一扫二维码加好友</div>
         <img class="dialogQrcord" :src="qrCodeImg" draggable="false" @mousedown="touchstart" @mouseup="touchend"
           @touchstart="touchstart" @touchend="touchend" />
       </div>
@@ -41,12 +41,12 @@
 <script>
 import { Message } from 'element-ui'
 export default {
-  
+
   data() {
     return {
       longProssTimer: null,
       centerDialogVisible: false,
-      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq.png',
+      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq-v3.png',
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
@@ -78,8 +78,8 @@ export default {
           Message.success('复制成功')
           document.body.removeChild(inputEl)
           _ks_trace.push({
-            event: 'form', convertId: 442890, cb: function () {
-              console.log('Your callback function here!')
+            event: 'form', convertId: 451717, cb: function () {
+              // console.log('Your callback function here!')
             }
           })
           return false
