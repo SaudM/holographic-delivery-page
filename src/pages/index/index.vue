@@ -21,21 +21,7 @@
             :placeholder="`请输入${item}`">
         </div>
       </div>
-
-
-
-
-
       <div class="yhys">
-
-        <div>
-          <b-form-checkbox id="checkbox-1" v-model="status" name="checkbox-1" value="accepted"
-            unchecked-value="not_accepted">
-            I accept the terms and use
-          </b-form-checkbox>
-          <div>State: <strong>{{ status }}</strong></div>
-        </div>
-
         同意并查看
         <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
@@ -62,9 +48,9 @@ export default {
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
-        { title: '公司：', cont: '莆田上德若谷企业管理有限公司' },
-        { title: '地址：', cont: '福建省莆田市荔城区拱辰街道东圳东路1199号中海天下1号楼1401室' },
-        { title: '电话：', cont: '0594-79976666' },
+        { title: '公司：', cont: '福州市鼓楼区好运达食品店' },
+        { title: '地址：', cont: '福建省福州市鼓楼区安泰街道圣庙路41号1#楼1层11店面' },
+        { title: '电话：', cont: '17020860808' },
       ]
     }
   },
@@ -90,7 +76,7 @@ export default {
           Message.success('复制成功')
           document.body.removeChild(inputEl)
           _ks_trace.push({
-            event: 'form', convertId: 442890, cb: function () {
+            event: 'form', convertId: 467904, cb: function () {
               console.log('Your callback function here!')
             }
           })

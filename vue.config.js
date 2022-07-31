@@ -4,8 +4,10 @@ let path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
 module.exports = {
-  publicPath: './',
+  publicPath: './web/audit',
+    // publicPath: './',
   devServer: {
     port: 7600,
       open: true,//项目启动时是否自动打开浏览器，我这里设置为false,不打开，true表示打开
