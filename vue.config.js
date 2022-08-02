@@ -6,7 +6,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  publicPath: './web/audit',
+  publicPath: './',
     // publicPath: './',
   devServer: {
     port: 7600,
