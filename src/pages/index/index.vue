@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="contentBox">
-      <img class="oneImg" v-for="(item, index) in 3" :key="index" :src="require(`@/assets/img${index}.jpg`)"
+      <img class="oneImg" v-for="(item, index) in 4" :key="index" :src="require(`@/assets/img${index}.jpg`)"
         draggable="false" />
       <div class="submitFormBox" v-if="!isMobile">
         <div class="submitOne" v-for="(item, index) in ['您的名字', '您的电话']" :key="index">
