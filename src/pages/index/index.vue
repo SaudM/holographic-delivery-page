@@ -4,16 +4,18 @@
       <div class="dialogCase" @click.stop="() => { }">
         <img class="closeDialog" @click="centerDialogVisible = false" src="@/assets/layout_close.png"
           draggable="false" />
-        <div class="dialogTitle">请添加助理微信</div>
+        <div class="dialogTitle">手机号:13371716318</div>
         <div class="dialogTitle" @mousedown="touchstart('copyText')" @mouseup="touchend"
-          @touchstart="touchstart('copyText')" @touchend="touchend">复制微信号:quanxi-shuju</div>
-        <div class="dialogTitle">扫一扫二维码加好友</div>
+          @touchstart="touchstart('copyText')" @touchend="touchend">微信号:quanxi-shuju</div>
+       
         <img class="dialogQrcord" :src="qrCodeImg" draggable="false" @mousedown="touchstart" @mouseup="touchend"
           @touchstart="touchstart" @touchend="touchend" />
+
+        <div class="dialogTitle">微信二维码</div>
       </div>
     </div>
     <div class="contentBox">
-      <img class="oneImg" v-for="(item, index) in 4" :key="index" :src="require(`@/assets/img${index}.jpg`)"
+      <img class="oneImg" v-for="(item, index) in 3" :key="index" :src="require(`@/assets/img${index}.jpg`)"
         draggable="false" />
       <div class="submitFormBox" v-if="!isMobile">
         <div class="submitOne" v-for="(item, index) in ['您的名字', '您的电话']" :key="index">
@@ -34,7 +36,7 @@
         </div>
       </div>
     </div>
-    <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '立即咨询' : '提 交' }}</button>
+    <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '占卜运势' : '提 交' }}</button>
 
   </div>
 </template>
@@ -46,7 +48,7 @@ export default {
     return {
       longProssTimer: null,
       centerDialogVisible: false,
-      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq-v3.png',
+      qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq_weixin.png',
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
@@ -77,11 +79,11 @@ export default {
           document.execCommand('copy')
           Message.success('复制成功')
           document.body.removeChild(inputEl)
-          _ks_trace.push({
-            event: 'form', convertId: 473566, cb: function () {
-              // console.log('Your callback function here!')
-            }
-          })
+          // _ks_trace.push({
+          //   event: 'form', convertId: 473566, cb: function () {
+          //     // console.log('Your callback function here!')
+          //   }
+          // })
           return false
         }
 
