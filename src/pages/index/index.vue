@@ -50,9 +50,9 @@ export default {
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
-        { title: '公司：', cont: '莆田上德若谷企业管理有限公司' },
-        { title: '地址：', cont: '福建省莆田市荔城区拱辰街道东圳东路1199号中海天下1号楼1401室' },
-        { title: '电话：', cont: '0594-79976666' },
+        { title: '公司：', cont: '厦门小尺子集团股份有限公司' },
+        { title: '地址：', cont: '中国(福建)自由贸易试验区厦门片区翔云一路40号盛通中心之二A区1212单元' },
+        { title: '电话：', cont: '18599001010' },
       ]
     }
   },
