@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '占卜运势' : '提 交' }}</button>
+    <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '查我的运势' : '提 交' }}</button>
 
   </div>
 </template>
@@ -54,7 +54,7 @@ export default {
       companyArr: [
         { title: '公司：', cont: '厦门小尺子集团股份有限公司' },
         { title: '地址：', cont: '中国(福建)自由贸易试验区厦门片区翔云一路40号盛通中心之二A区1212单元' },
-        { title: '电话：', cont: '18599001010' },
+        { title: '电话：', cont: '13371716318' },
       ]
     }
   },
@@ -79,11 +79,11 @@ export default {
           document.execCommand('copy')
           Message.success('复制成功')
           document.body.removeChild(inputEl)
-          // _ks_trace.push({
-          //   event: 'form', convertId: 473566, cb: function () {
-          //     // console.log('Your callback function here!')
-          //   }
-          // })
+          _ks_trace.push({
+            event: 'form', convertId: 473566, cb: function () {
+              // console.log('Your callback function here!')
+            }
+          })
           return false
         }
 
