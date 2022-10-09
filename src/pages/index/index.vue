@@ -26,12 +26,12 @@
         <a href="https://web.fulitimes.com/web/yhys.html">《个人信息授权与保护声明》</a>
         授权范围
       </div>
-<!--      <div class="companyIntroduce">-->
-<!--        <div class="introduceOne" v-for="(item, index) in companyArr" :key="index">-->
-<!--          <span class="introduceText">{{ item.title }}</span>-->
-<!--          <span class="introduceCont">{{ item.cont }}</span>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="companyIntroduce">
+        <div class="introduceOne" v-for="(item, index) in companyArr" :key="index">
+          <span class="introduceText">{{ item.title }}</span>
+          <span class="introduceCont">{{ item.cont }}</span>
+        </div>
+      </div>
     </div>
     <button class="showQrcord" @click="clickSubmitButton">{{ isMobile ? '占卜运势' : '提 交' }}</button>
 
@@ -47,11 +47,11 @@ export default {
       qrCodeImg: 'https://fuli-img.oss-cn-beijing.aliyuncs.com/avatar/cq.png',
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
-      // companyArr: [
-      //   { title: '公司：', cont: '福州市鼓楼区好运达食品店' },
-      //   { title: '地址：', cont: '福建省福州市鼓楼区安泰街道圣庙路41号1#楼1层11店面' },
-      //   { title: '电话：', cont: '17020860808' },
-      // ]
+      companyArr: [
+        { title: '公司：', cont: '福州市鼓楼区好运达食品店' },
+        { title: '地址：', cont: '福建省福州市鼓楼区安泰街道圣庙路41号1#楼1层11店面' },
+        { title: '电话：', cont: '17020860808' },
+      ]
     }
   },
   components: {

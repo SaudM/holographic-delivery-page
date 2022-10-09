@@ -6,8 +6,8 @@ function resolve(dir) {
 }
 
 module.exports = {
-  publicPath: './user/',
-  // publicPath: './audit/',
+  // publicPath: './user/',
+  publicPath: './audit/',
   // publicPath: './',
   devServer: {
     port: 7600,
@@ -26,7 +26,7 @@ module.exports = {
   chainWebpack: config=>{
     config.resolve.alias
     .set('@',resolve('./src'))
-    .set('assets',resolve('./src/assets'))　　
+    .set('assets',resolve('./src/assets'))
     .set('components',resolve('./src/components'))
     .set('request',resolve('./src/request'))
     .set('styles',resolve('./src/styles'))
