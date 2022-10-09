@@ -48,8 +48,8 @@ export default {
       isMobile: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"].some(value => navigator.userAgent.includes(value)),
       submitArr: [],
       companyArr: [
-        { title: '公司：', cont: '福州市鼓楼区好运达食品店' },
-        { title: '地址：', cont: '福建省福州市鼓楼区安泰街道圣庙路41号1#楼1层11店面' },
+        { title: '公司：', cont: '厦门小尺子集团股份有限公司' },
+        { title: '地址：', cont: '中国（福建）自由贸易试验区厦门片区翔云一路40号盛通中心之二A区1212单元' },
         { title: '电话：', cont: '17020860808' },
       ]
     }
